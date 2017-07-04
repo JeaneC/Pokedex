@@ -15,7 +15,7 @@ class PokeCollectionViewCell: UICollectionViewCell {
     
     var pokemon: Pokemon!
     
-    func configureCell(pokemon: Pokemon) {
+    func configureCell(_ pokemon: Pokemon) {
         
         self.pokemon = pokemon
         
