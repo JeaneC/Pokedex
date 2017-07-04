@@ -103,8 +103,38 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         view.endEditing(true)
+        
+        var poke: Pokemon!
+        
+        if inSearchMode {
+            poke = filteredPokemon[indexPath.row]
+        } else {
+            poke = pokemon[indexPath.row]
+            
+        }
+        // When we're in search mode our itemcount is different and so therefore a pokemon
+        // might have a different index. For instance charmander would be number 4 in the full list
+        // But would be number 1 when we have "char" in the search bar
+        // Well... technically charmander would be 3 and then it would be 0 if we had "char" because
+        // Arrays start at 0
+        
+        performSegue(withIdentifier: "PokemonDetailVC", sender: poke)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PokemonDetailVC" {
+            if let detailsVC = segue.destination as? PokemonDetailViewController {
+                if let poke = sender as? Pokemon {
+                    detailsVC.pokemon =  poke
+                }
+            }
+        }
+        // Prepare Segway
+        // If the segway is PokemonDetailVc then
+        // Create detailsVC as the destination View Controller
+        // Then create poke as the sender (the pokemon we want more information of)
+        // Then initialize it to the view controller's pokemon variable
+    }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }

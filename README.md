@@ -18,4 +18,9 @@ V 0.20
 
 V 0.30
 - Added a search bar feature
-- Music is off by default
+- Music is off by default now
+
+V 0.50
+- Created Second View Controller and designed the UI (PokemonDetailViewController.swift)
+    - The UI was made using layers of stack views.
+- Added a segue to the second view controller. For now the example is Ivysaur.
