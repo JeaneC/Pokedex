@@ -12,6 +12,7 @@
 		4128F67A1F0C14DD00AAB0DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4128F6781F0C14DD00AAB0DB /* Main.storyboard */; };
 		4128F67C1F0C14DD00AAB0DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4128F67B1F0C14DD00AAB0DB /* Assets.xcassets */; };
 		4128F67F1F0C14DD00AAB0DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4128F67D1F0C14DD00AAB0DB /* LaunchScreen.storyboard */; };
+		4128F6871F0C169100AAB0DB /* pokemon.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4128F6861F0C169100AAB0DB /* pokemon.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,8 @@
 		4128F67B1F0C14DD00AAB0DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4128F67E1F0C14DD00AAB0DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4128F6801F0C14DD00AAB0DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4128F6861F0C169100AAB0DB /* pokemon.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pokemon.csv; sourceTree = "<group>"; };
+		4128F6881F0C16CC00AAB0DB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +59,12 @@
 			children = (
 				4128F6741F0C14DD00AAB0DB /* AppDelegate.swift */,
 				4128F6761F0C14DD00AAB0DB /* ViewController.swift */,
+				4128F6861F0C169100AAB0DB /* pokemon.csv */,
 				4128F6781F0C14DD00AAB0DB /* Main.storyboard */,
 				4128F67B1F0C14DD00AAB0DB /* Assets.xcassets */,
 				4128F67D1F0C14DD00AAB0DB /* LaunchScreen.storyboard */,
 				4128F6801F0C14DD00AAB0DB /* Info.plist */,
+				4128F6881F0C16CC00AAB0DB /* README.md */,
 			);
 			path = jPokedex;
 			sourceTree = "<group>";
@@ -126,6 +131,7 @@
 			files = (
 				4128F67F1F0C14DD00AAB0DB /* LaunchScreen.storyboard in Resources */,
 				4128F67C1F0C14DD00AAB0DB /* Assets.xcassets in Resources */,
+				4128F6871F0C169100AAB0DB /* pokemon.csv in Resources */,
 				4128F67A1F0C14DD00AAB0DB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
