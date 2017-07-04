@@ -15,3 +15,7 @@ V 0.20
 - Pokemon Font obtained from - http://www.dafont.com/pokemon.font
 - Added sound and Pokedex title at the top
 - Organized Folders and Files
+
+V 0.30
+- Added a search bar feature
+- Music is off by default
