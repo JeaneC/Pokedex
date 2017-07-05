@@ -43,3 +43,10 @@ V 1.00
     - Mega evolutions are not supported
     - Organize the code!
 
+V 1.5 
+- Updated the method of retrieval for the next Pokemon evolution
+- I created a TableView to show the evolutions. Currently it is incomplete. Use V 1.00 for something more reliable
+- Along with the new TableView is it's own file EvolutionTableViewCell
+- Added the JViewController, basically an About Me if the user seems to shake the device
+- The App Now Properly tells the next evolution assuming the API is correct
+    - Funny easter egg, the actual API itself had the next evolution of Jynx to be Electabuzz

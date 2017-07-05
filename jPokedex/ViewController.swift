@@ -21,6 +21,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.becomeFirstResponder()
         
         collection.dataSource = self
         collection.delegate = self
@@ -31,6 +32,18 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         initAudio()
 
         
+    }
+    
+    override var canBecomeFirstResponder: Bool {
+        get {
+            return true
+        }
+    }
+    
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            performSegue(withIdentifier: "shake", sender: nil)
+        }
     }
     func initAudio() {
         let path = Bundle.main.path(forResource: "music", ofType: "mp3")!

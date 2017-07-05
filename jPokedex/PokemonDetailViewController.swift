@@ -8,8 +8,9 @@
 
 import UIKit
 
-class PokemonDetailViewController: UIViewController {
+class PokemonDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var pokemon: Pokemon!
+    var evolutions = [Pokemon]()
     
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var mainImg: UIImageView!
@@ -20,18 +21,20 @@ class PokemonDetailViewController: UIViewController {
     @IBOutlet weak var weightLbl: UILabel!
     @IBOutlet weak var attackLbl: UILabel!
     @IBOutlet weak var pokedexLbl: UILabel!
-    @IBOutlet weak var currentEvoImg: UIImageView!
-    @IBOutlet weak var nextEvoImg: UIImageView!
     @IBOutlet weak var evoLbl: UILabel!
+    @IBOutlet weak var nextEvoImg: UIImageView!
+    @IBOutlet weak var tableView: UITableView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         nameLbl.text = pokemon.name.capitalized
-        print (pokemon.pokedexId)
+        tableView.rowHeight = 80 //Have to do this manually since storyboard settings don't lock it
+        
         pokemon.downloadPokemonDetail {
             self.updateUI()
             //More efficient to have the code here than in the main View Controller. This would only download an invidiual pokemon, rather than downloading the whole database.
+            self.tableView.reloadData()
         }
         
         
@@ -46,15 +49,16 @@ class PokemonDetailViewController: UIViewController {
         typeLbl.text = pokemon.type
         
         if pokemon.evolvable {
-            nextEvoImg.image = UIImage(named: "\(pokemon.pokedexId+1).png")
+            //This will probably be a for each loop in the future
+            // I will also probably use Table Views to display multiple evolutions
+
+            //nextEvoImg.image = UIImage(named: "\(pokemon.nextEvoId).png")
             //This is bad code if the pokemon has two evolutions. For instance, eevee's evolutions wouldn't work too well here...
-            currentEvoImg.image = mainImg.image
         }
+        
         evoLbl.text = pokemon.nextEvolutionTxt
         descriptionLbl.text = pokemon.description
 
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -66,5 +70,25 @@ class PokemonDetailViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1 //This is fine
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3 //Change this later
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "evoCell", for: indexPath) as? EvolutionTableViewCell {
+            cell.pokemonImg.image = UIImage(named: "\(pokemon.nextEvoId).png")
+            cell.nextEvoLbl.text = pokemon.nextPokemon
+            return cell
+        } else {
+            return EvolutionTableViewCell()
+        }
+
+    }
+
     
 }
