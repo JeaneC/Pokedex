@@ -23,15 +23,40 @@ class PokemonDetailViewController: UIViewController {
     @IBOutlet weak var currentEvoImg: UIImageView!
     @IBOutlet weak var nextEvoImg: UIImageView!
     @IBOutlet weak var evoLbl: UILabel!
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         nameLbl.text = pokemon.name.capitalized
-
-
+        print (pokemon.pokedexId)
+        pokemon.downloadPokemonDetail {
+            self.updateUI()
+            //More efficient to have the code here than in the main View Controller. This would only download an invidiual pokemon, rather than downloading the whole database.
+        }
+        
+        
     }
+    func updateUI() {
+        attackLbl.text = pokemon.attack
+        defenseLbl.text = pokemon.defense
+        weightLbl.text = pokemon.weight
+        heightLbl.text = pokemon.height
+        pokedexLbl.text = String(pokemon.pokedexId)
+        mainImg.image = UIImage(named: "\(pokemon.pokedexId).png")
+        typeLbl.text = pokemon.type
+        
+        if pokemon.evolvable {
+            nextEvoImg.image = UIImage(named: "\(pokemon.pokedexId+1).png")
+            //This is bad code if the pokemon has two evolutions. For instance, eevee's evolutions wouldn't work too well here...
+            currentEvoImg.image = mainImg.image
+        }
+        evoLbl.text = pokemon.nextEvolutionTxt
+        descriptionLbl.text = pokemon.description
 
+        
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -40,6 +65,6 @@ class PokemonDetailViewController: UIViewController {
     @IBAction func backBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-
-
+    
+    
 }

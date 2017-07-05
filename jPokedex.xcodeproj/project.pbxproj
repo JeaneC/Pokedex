@@ -20,6 +20,7 @@
 		4128F6981F0C28B300AAB0DB /* music.png in Resources */ = {isa = PBXBuildFile; fileRef = 4128F6971F0C28B300AAB0DB /* music.png */; };
 		4128F69A1F0C28F400AAB0DB /* music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4128F6991F0C28F400AAB0DB /* music.mp3 */; };
 		4128F69E1F0C34F400AAB0DB /* PokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4128F69D1F0C34F400AAB0DB /* PokemonDetailViewController.swift */; };
+		412D464E1F0C5DBE00E71269 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412D464D1F0C5DBE00E71269 /* Constants.swift */; };
 		F69173A6001FC4A8FA7BEE15 /* Pods_jPokedex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 011265FCC860780D1EF083E1 /* Pods_jPokedex.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		4128F6991F0C28F400AAB0DB /* music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music.mp3; sourceTree = "<group>"; };
 		4128F69B1F0C2D2700AAB0DB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4128F69D1F0C34F400AAB0DB /* PokemonDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewController.swift; sourceTree = "<group>"; };
+		412D464D1F0C5DBE00E71269 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				4128F6901F0C233000AAB0DB /* csv.swift */,
+				412D464D1F0C5DBE00E71269 /* Constants.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				4128F68F1F0C1DA300AAB0DB /* PokeCollectionViewCell.swift in Sources */,
 				4128F6751F0C14DD00AAB0DB /* AppDelegate.swift in Sources */,
 				4128F68C1F0C185C00AAB0DB /* Pokemon.swift in Sources */,
+				412D464E1F0C5DBE00E71269 /* Constants.swift in Sources */,
 				4128F6911F0C233000AAB0DB /* csv.swift in Sources */,
 				4128F69E1F0C34F400AAB0DB /* PokemonDetailViewController.swift in Sources */,
 			);

@@ -1,7 +1,8 @@
-This is a Pokedex app using the Pokemon API which can be found on https://pokeapi.co/. We used Alamofire - https://github.com/Alamofire/Alamofire - to parse requests from the online API.
+This is a Pokedex app using the Pokemon API which can be found on https://pokeapi.co/. We used Alamofire - https://github.com/Alamofire/Alamofire - to parse requests and network calls from the online API.
 
 To open the project file open jPokedex.xcworkspace (this properly embedds Alamofire and other pods into the project)
 
+![alt text](https://i.imgur.com/l8pk2EV.png)
 
 V 0.00 
 - First Commit
@@ -30,3 +31,15 @@ V 0.50
 V 0.60
 - We integrated Alamofire into our program to parse json files in pokeapi
 - Functionalized back button
+
+V 1.00
+- The Bio Description now works for the most part
+- App now tells you if the pokemon has an evolution
+- App properly tells you the pokemon's stats
+
+Need to Fix/Add in V 2.00
+- The Pokemon's 'moves section
+- The way the app determines the next evolution is very flawed. Need a more reliable stable system of (1) determine how the pokemon will evolve (not just by level) and (2) that a pokemon can evolve into more than one evolution (ex. Eevee has multiple evolutions, but this program only displays the next one)
+- Mega evolutions are not supported
+- Organize the code!
+
